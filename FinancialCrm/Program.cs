@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FinancialCrm.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,7 +17,9 @@ namespace FinancialCrm
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmBanks());
+            //Application.Run(new FrmBanks(new FinancialCrmDbEntities()));
+            Application.Run(new FrmBilling(new FinancialCrmDbEntities()));
         }
     }
 }
+
