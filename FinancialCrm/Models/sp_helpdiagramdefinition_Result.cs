@@ -10,13 +10,10 @@
 namespace FinancialCrm.Models
 {
     using System;
-    using System.Collections.Generic;
     
-    public partial class Users
+    public partial class sp_helpdiagramdefinition_Result
     {
-        public int UserId { get; set; }
-        public string Username { get; set; }
-        public string Password { get; set; }
-        public string EmailAddress { get; set; }
+        public Nullable<int> version { get; set; }
+        public byte[] definition { get; set; }
     }
 }
