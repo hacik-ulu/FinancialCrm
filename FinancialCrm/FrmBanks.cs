@@ -89,7 +89,6 @@ namespace FinancialCrm
                 $"Tarih : {bankProcess5.ProcessDate:dd.MM.yyyy}";
             #endregion
         }
-
         private void button4_Click(object sender, EventArgs e)
         {
             FrmBilling frmBilling = new FrmBilling(_context);

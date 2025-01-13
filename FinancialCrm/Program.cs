@@ -18,7 +18,8 @@ namespace FinancialCrm
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new FrmBanks(new FinancialCrmDbEntities()));
-            Application.Run(new FrmBilling(new FinancialCrmDbEntities()));
+            //Application.Run(new FrmBilling(new FinancialCrmDbEntities()));
+            Application.Run(new FrmDashboard(new FinancialCrmDbEntities()));
         }
     }
 }
