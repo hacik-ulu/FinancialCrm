@@ -30,7 +30,6 @@ namespace FinancialCrm
                 Select(y => y.Amount).FirstOrDefault();
             lblLastBankProcessAmount.Text = lastBankProcessAmount.ToString() + " ₺";
 
-            // Chart1
             var bankData = _context.Banks.Select(x => new
             {
                 x.BankTitle,
@@ -43,7 +42,6 @@ namespace FinancialCrm
                 series.Points.AddXY(item.BankTitle, item.BankBalance);
             }
 
-            // Chart2
             var billData = _context.Bills.Select(x => new
             {
                 x.BillTitle,
@@ -93,21 +91,21 @@ namespace FinancialCrm
             #endregion
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void btnBankDetails_Click(object sender, EventArgs e)
         {
             this.Hide();
-            FrmBanks frmBanks = new FrmBanks(_context);
-            frmBanks.Show();
+            FrmBankDetails frmBankDetails = new FrmBankDetails(_context);
+            frmBankDetails.Show();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void btnBill_Click(object sender, EventArgs e)
         {
             this.Hide();
             FrmBilling frmBilling = new FrmBilling(_context);
             frmBilling.Show();
         }
 
-        private void button8_Click(object sender, EventArgs e)
+        private void btnExit_Click(object sender, EventArgs e)
         {
             this.Hide();
             FrmLogin frmLogin = new FrmLogin(_context);
@@ -121,6 +119,39 @@ namespace FinancialCrm
             frmBanks.Show();
         }
 
-       
+        private void btnExpense_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FrmExpense frmExpense = new FrmExpense(_context);
+            frmExpense.Show();
+        }
+
+        private void btnSetting_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FrmSetting frmSetting = new FrmSetting(_context);
+            frmSetting.Show();
+        }
+
+        private void btnExit_Click_1(object sender, EventArgs e)
+        {
+            this.Hide();
+            FrmLogin frmLogin = new FrmLogin(_context);
+            frmLogin.Show();
+        }
+
+        private void btnBankDetails_Click_1(object sender, EventArgs e)
+        {
+            this.Hide();
+            FrmBankDetails frmBankDetails = new FrmBankDetails(_context);
+            frmBankDetails.Show();
+        }
+
+        private void btnBill_Click_1(object sender, EventArgs e)
+        {
+            this.Hide();
+            FrmBilling frmBilling = new FrmBilling(_context);
+            frmBilling.Show();
+        }
     }
 }

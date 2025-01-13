@@ -54,7 +54,7 @@ namespace FinancialCrm
                 return;
             }
 
-            if (!BCrypt.Net.BCrypt.Verify(txtPassword.Text, user.Password)) // Hash'li şifreyi doğrulama
+            if (!BCrypt.Net.BCrypt.Verify(txtPassword.Text, user.Password)) 
             {
                 MessageBox.Show("Şifre hatalı. Lütfen tekrar deneyiniz.",
                                  "Hatalı Şifre",
@@ -109,4 +109,3 @@ namespace FinancialCrm
     }
 }
 
-// Yönlendirme yap basarı durumunda.

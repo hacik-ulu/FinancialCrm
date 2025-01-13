@@ -125,11 +125,18 @@ namespace FinancialCrm
             frmBanks.Show();
         }
 
-        private void button6_Click(object sender, EventArgs e)
+        private void btnDashboard_Click(object sender, EventArgs e)
         {
             this.Hide();
             FrmDashboard frmDashboard = new FrmDashboard(_context);
             frmDashboard.Show();
+        }
+
+        private void btnDashboard_Click_1(object sender, EventArgs e)
+        {
+            this.Hide();
+            FrmDashboard frmDashboard = new FrmDashboard(_context);
+            frmDashboard.ShowDialog();
         }
     }
 }
