@@ -1,19 +1,14 @@
 ﻿using FinancialCrm.Models;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using BCrypt.Net; // BCrypt kullanımı için
 
 namespace FinancialCrm
 {
     public partial class FrmResetPassword : Form
     {
-        private readonly FinancialCrmDbEntities _context;  
+        private readonly FinancialCrmDbEntities _context;
         public FrmResetPassword(FinancialCrmDbEntities context)
         {
             _context = context;
@@ -45,6 +40,8 @@ namespace FinancialCrm
                 return;
             }
 
+
+
             if (string.IsNullOrWhiteSpace(newPassword) || string.IsNullOrWhiteSpace(confirmPassword))
             {
                 MessageBox.Show("Şifreyi ve şifre doğrulamasını giriniz.",
@@ -63,7 +60,7 @@ namespace FinancialCrm
                 return;
             }
 
-            user.Password = newPassword;
+            user.Password = BCrypt.Net.BCrypt.HashPassword(newPassword); 
             _context.SaveChanges();
 
             MessageBox.Show("Şifreniz başarıyla güncellenmiştir.",
@@ -72,16 +69,14 @@ namespace FinancialCrm
                             MessageBoxIcon.Information);
 
             this.Hide();
-
             FrmLogin frmLogin = new FrmLogin(_context);
             frmLogin.ShowDialog();
         }
+
         private void cbShowPassword_CheckedChanged(object sender, EventArgs e)
         {
             txtResetPassword.PasswordChar = cbShowPassword.Checked ? '\0' : '*';
             txtConfirmPassword.PasswordChar = cbShowPassword.Checked ? '\0' : '*';
-
         }
     }
-
 }

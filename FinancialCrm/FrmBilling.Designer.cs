@@ -130,6 +130,7 @@
             this.button6.TabIndex = 5;
             this.button6.Text = "Dashboard";
             this.button6.UseVisualStyleBackColor = false;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // button5
             // 
@@ -144,6 +145,7 @@
             this.button5.TabIndex = 4;
             this.button5.Text = "Banka Hareketleri";
             this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button4
             // 
@@ -172,6 +174,7 @@
             this.button3.TabIndex = 2;
             this.button3.Text = "Faturalar";
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // btnBanksForm
             // 
@@ -367,7 +370,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "FrmBilling";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ödeme & Fatura Formu";
             this.Load += new System.EventHandler(this.FrmBilling_Load);
             this.panel1.ResumeLayout(false);

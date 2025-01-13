@@ -95,5 +95,41 @@ namespace FinancialCrm
             frmBilling.Show();
             this.Hide();
         }
+
+        private void btnDirectToFrmBill_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FrmBilling frmBilling = new FrmBilling(_context);
+            frmBilling.Show();
+            
+        }
+
+        private void btnDirectToBankProcess_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FrmBilling frmBilling = new FrmBilling(_context);
+            frmBilling.Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FrmBilling frmBilling = new FrmBilling(_context);
+            frmBilling.Show();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FrmBanks frmBanks = new FrmBanks(_context);
+            frmBanks.Show();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FrmDashboard frmDashboard = new FrmDashboard(_context);
+            frmDashboard.Show();
+        }
     }
 }
