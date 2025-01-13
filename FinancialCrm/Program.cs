@@ -21,7 +21,9 @@ namespace FinancialCrm
             //Application.Run(new FrmBilling(new FinancialCrmDbEntities()));
             //Application.Run(new FrmDashboard(new FinancialCrmDbEntities()));
             //Application.Run(new FrmLogin( new FinancialCrmDbEntities()));
-            Application.Run(new FrmExpense(new FinancialCrmDbEntities()));
+            //Application.Run(new FrmExpense(new FinancialCrmDbEntities()));
+            Application.Run(new FrmBankDetails(new FinancialCrmDbEntities()));
+
 
         }
     }

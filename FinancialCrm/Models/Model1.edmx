@@ -5,6 +5,21 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="FinancialCrmDbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="BankDetails">
+          <Key>
+            <PropertyRef Name="BankID" />
+          </Key>
+          <Property Name="BankID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="BankName" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="CustomerCount" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="InterestRate" Type="decimal" Precision="5" Scale="2" />
+          <Property Name="DepositAmount" Type="decimal" Precision="15" Scale="2" />
+          <Property Name="CreditCardCount" Type="int" />
+          <Property Name="EstablishmentYear" Type="int" />
+          <Property Name="CustomerPortfolio" Type="decimal" Precision="15" Scale="2" />
+          <Property Name="IsActive" Type="bit" />
+          <Property Name="BankWebsite" Type="varchar" MaxLength="255" />
+        </EntityType>
         <EntityType Name="BankProcesses">
           <Key>
             <PropertyRef Name="BankProcessId" />
@@ -126,6 +141,7 @@
         </Function>
         <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <EntityContainer Name="FinancialCrmDbModelStoreContainer">
+          <EntitySet Name="BankDetails" EntityType="Self.BankDetails" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="BankProcesses" EntityType="Self.BankProcesses" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Banks" EntityType="Self.Banks" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Bills" EntityType="Self.Bills" Schema="dbo" store:Type="Tables" />
@@ -285,6 +301,7 @@
             <Parameter Name="new_diagramname" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="sp_upgraddiagrams" />
+          <EntitySet Name="BankDetails" EntityType="FinancialCrmDbModel.BankDetails" />
         </EntityContainer>
         <ComplexType Name="sp_helpdiagramdefinition_Result">
           <Property Type="Int32" Name="version" Nullable="true" />
@@ -297,6 +314,21 @@
           <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
           <Property Type="Int32" Name="OwnerID" Nullable="false" />
         </ComplexType>
+        <EntityType Name="BankDetails">
+          <Key>
+            <PropertyRef Name="BankID" />
+          </Key>
+          <Property Name="BankID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BankName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="CustomerCount" Type="Decimal" />
+          <Property Name="InterestRate" Type="Decimal" Precision="5" Scale="2" />
+          <Property Name="DepositAmount" Type="Decimal" Precision="15" Scale="2" />
+          <Property Name="CreditCardCount" Type="Int32" />
+          <Property Name="EstablishmentYear" Type="Int32" />
+          <Property Name="CustomerPortfolio" Type="Decimal" Precision="15" Scale="2" />
+          <Property Name="IsActive" Type="Boolean" />
+          <Property Name="BankWebsite" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -399,6 +431,22 @@
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="FinancialCrmDbModel.Store.sp_renamediagram" />
           <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="FinancialCrmDbModel.Store.sp_upgraddiagrams" />
+          <EntitySetMapping Name="BankDetails">
+            <EntityTypeMapping TypeName="FinancialCrmDbModel.BankDetails">
+              <MappingFragment StoreEntitySet="BankDetails">
+                <ScalarProperty Name="BankWebsite" ColumnName="BankWebsite" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="CustomerPortfolio" ColumnName="CustomerPortfolio" />
+                <ScalarProperty Name="EstablishmentYear" ColumnName="EstablishmentYear" />
+                <ScalarProperty Name="CreditCardCount" ColumnName="CreditCardCount" />
+                <ScalarProperty Name="DepositAmount" ColumnName="DepositAmount" />
+                <ScalarProperty Name="InterestRate" ColumnName="InterestRate" />
+                <ScalarProperty Name="CustomerCount" ColumnName="CustomerCount" />
+                <ScalarProperty Name="BankName" ColumnName="BankName" />
+                <ScalarProperty Name="BankID" ColumnName="BankID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
