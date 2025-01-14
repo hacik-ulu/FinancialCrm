@@ -457,7 +457,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "FrmBanks";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmBanks";
+            this.Text = "Bankalar Formu";
             this.Load += new System.EventHandler(this.FrmBanks_Load);
             this.panel1.ResumeLayout(false);
             this.deneme.ResumeLayout(false);

@@ -150,7 +150,7 @@
             this.Controls.Add(this.btnChangePassword);
             this.Name = "FrmResetPassword";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmResetPassword";
+            this.Text = "Şifre Sıfırlama Formu";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
